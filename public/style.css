@@ -1,0 +1,40 @@
+/* Hallmark · shape: app screen · genre: atmospheric · theme: Ribbon · ribbon: two-in-the-morning · signature: live circle · v2.0.0 */
+/* Critique: rehearsal controls surround the actual instrument; no ornamental graphics. */
+/* Waiver: system font for an offline prototype; canvas colours are performer-controlled data. */
+:root {
+  color-scheme: dark;
+  --paper: #10151e;
+  --ink: #eeebe2;
+  --muted: #adb9cc;
+  --rule: #384353;
+  --accent: #e6bc80;
+  --accent-ink: #30251b;
+  --focus: #e6bc80;
+  --disabled-fill: #28313d;
+  --disabled-ink: #a6aebb;
+  --font-body: ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow-x: clip; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
+main { max-width: 48rem; margin: auto; padding: 20px max(20px, env(safe-area-inset-right)) 24px max(20px, env(safe-area-inset-left)); }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+h1 { font-size: 24px; font-weight: 500; margin: 0; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+#device { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+#stage { height: clamp(180px, 42svh, 420px); margin: 20px 0; border-block: 1px solid var(--rule); }
+canvas { display: block; }
+.controls { max-width: 32rem; margin: auto; }
+p { font-size: 16px; line-height: 1.5; margin: 12px 0; }
+#status { min-height: 48px; }
+.actions { display: flex; gap: 12px; margin: 12px 0 20px; }
+button { min-height: 48px; padding: 12px 20px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink); font: inherit; cursor: pointer; }
+#enable { flex: 1; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+button:hover { filter: brightness(1.12); }
+button:active { transform: translateY(1px); }
+button:disabled, #enable:disabled { background: var(--disabled-fill); color: var(--disabled-ink); border-color: var(--rule); cursor: not-allowed; }
+button[aria-pressed="true"] { border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+label { display: flex; justify-content: space-between; font-size: 15px; }
+input { width: 100%; min-height: 44px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.hint, summary, #diagnostics { color: var(--muted); font-size: 14px; line-height: 1.5; }
+summary { cursor: pointer; min-height: 44px; padding-block: 12px; }
+@media (prefers-reduced-motion: reduce) { button:active { transform: none; } }

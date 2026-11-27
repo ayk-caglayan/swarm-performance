@@ -1,0 +1,14 @@
+{
+  "name": "swarm-performance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "start:domain": "node server.js --domain",
+    "setup:https": "node scripts/setup-https.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": { "osc": "2.4.5", "p5": "1.11.11", "ws": "8.18.3" }
+}
